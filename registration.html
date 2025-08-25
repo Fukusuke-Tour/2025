@@ -1,0 +1,579 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Pendaftaran Tour</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.svg">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- Web Font -->
+    <link href="../../css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/LineIcons.2.0.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/tiny-slider.css">
+    <link rel="stylesheet" href="assets/css/glightbox.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+    .custom-checkbox-group {
+        margin-bottom: 20px;
+        padding: 10px 15px;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+    }
+
+    .custom-checkbox-group .custom-label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 10px;
+        color: #333;
+        font-size: 16px;
+    }
+
+    .custom-checkbox-group .custom-check {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+        
+    }
+
+    .custom-checkbox-group input[type="checkbox"] {
+        margin-right: 10px;
+        width: 18px;
+        height: 18px;
+        accent-color: #007bff; /* biru */
+        cursor: pointer;
+        float: none;
+        display: inline-block;
+    }
+
+    .custom-checkbox-group label {
+        font-size: 15px;
+        color: #222;
+        cursor: pointer;
+    }
+
+    @media (max-width: 576px) {
+        .custom-checkbox-group {
+        padding: 10px;
+        }
+
+        .custom-checkbox-group label {
+        font-size: 14px;
+        }
+    }
+    </style>
+
+
+
+</head>
+
+<body data-page="ikepesertaan">
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- /End Preloader -->
+
+    <!-- Start Header Area -->
+    <header class="header style2 navbar-area">
+        <div id="navbar-container"></div>
+    </header>
+    <!-- End Header Area -->
+
+    <!-- Start Breadcrumbs -->
+    <div class="breadcrumbs overlay">
+      
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
+                    <div class="breadcrumbs-content">
+                        <h1 class="page-title">Pendaftaran</h1>
+                        <p>Daftarkan diri anda dan keluarga anda untuk mengikuti<br>
+                          keseruan Tour Fukusuke 2025
+                        </p>
+                        <p>Pastikan Anda membaca ketentuan peserta
+                        </p>
+                    </div>
+                    <ul class="breadcrumb-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li>Register</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+
+    <!-- start Registration section -->
+    <section class="login section">
+      
+        <div class="container">        
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-12">
+                    <div class="form-head">
+                        <h4 class="title">Pendaftaran Tour 2025</h4>
+                        <div class="about-left" style="display: none;">
+                          <div class="about-title align-left" style="display: none;">
+                              <h5 class="wow fadeInUp" data-wow-delay=".4s">Syarat & Ketentuan Peserta</h5>
+                              <p>.</p>
+                              <p class="wow fadeInUp" data-wow-delay=".6s">
+                                  1. Karyawan yang sudah bekerja minimal 3 bulan, Untuk Helper minimal 1 tahun.<br>
+                                  <br>
+                                  2. Karyawan boleh mengajak keluarga yang terdaftar di perusahaan. <br>
+                                  <br>
+                                  3. Karyawan hanya boleh membawa maksimal 3 anak.<br>
+                                  <br>
+                                  4. Anak karyawan yang sudah menikah atau telah berumur 21 tahun tidak diperkenankan mengikuti tour, kecuali sedang kuliah. <br>
+                                  <br>
+                                  5. Bagi karyawan yang sedang <strong>hamil</strong> atau <strong>istrinya sedang hamil</strong> dan <strong>membawa anak yang berusia kurang dari 1 tahun</strong>, maka <B>WAJIB</B> mengisi form pernyataan dari pihak Admin.<br>
+                              </p>
+                              <p><br></p>
+                          </div>
+                          <div class="about-title align-left">
+                              <h5 class="wow fadeInUp" data-wow-delay=".4s">Daftarkan diri anda dengan mengisi form di bawah</h5>
+                          </div>
+                          .<br>
+                          <form id="formDaftar">
+                              <div class="form-group">
+                                  <input class="margin-5px-bottom" type="text" id="nik" placeholder="Masukan NIK">
+                                  <p id="error-nik" style="color: red;"></p>
+                              </div>
+                              <div class="form-group" >
+                                  <input class="margin-5px-bottom" type="text" id="nama" placeholder="Nama akan muncul setelah memasukan NIK" readonly>
+                              </div>
+                              <div class="form-group">
+                                  <input class="margin-5px-bottom" type="text" id="perusahaan" placeholder="akan muncul setelah memasukan NIK" readonly>
+                                  <p id="info" style="color: red; display: none;" >Data Akan muncul jika NIK Benar</p>
+                              </div>
+                              <div class="form-group" id="wrapper-destinasi" style="display: none;">
+                              <label>Destinasi</label>
+                                  <select class="form-control margin-5px-bottom" id="destinasi" required>
+                                      <option value="">-- Pilih Destinasi --</option>
+                                      <option value="Dufan">Dunia Fantasy Ancol</option>
+                                      <option value="ODS-Seaworld-JBL">ODS-Seaworld-JBL</option>
+                                      <option value="Tidak Ikut Tour">Tidak Ikut Tour</option>
+                                      <!-- Tambahkan opsi lain sesuai kebutuhan -->
+                                  </select>
+                            </div>
+                            
+                            <div class="form-group" id="wrapper-alasan" style="display: none;">
+                                <input class="margin-5px-bottom" type="text" id="alasan" placeholder="Alasan Anda tidak mengikuti tour">
+                            </div>
+
+                            <div class="form-group" id="wrapper-status" style="display: none;">
+                            <label>Status</label>
+                                <select class="form-control margin-5px-bottom" id="status" required>
+                                    <option value="">-- Pilih Status --</option>
+                                    <option value="Lajang">Lajang</option>
+                                    <option value="Menikah">Menikah</option>
+                                    <!-- Tambahkan opsi lain sesuai kebutuhan -->
+                                </select>
+                            </div>
+
+                            <div class="custom-checkbox-group" id="wrapper-yang-diajak" style="display: none;">
+                            <label class="custom-label">Yang Akan Diajak</label>
+                            <div class="custom-check" id="chekistri" style="display: none;">
+                                <input type="checkbox" id="ajak-istri" name="yang_diajak[]" value="istri">
+                                <label for="ajak-istri">Istri</label>
+                            </div>
+                            <div class="custom-check" id="cheksuami" style="display: none;">
+                                <input type="checkbox" id="ajak-suami" name="yang_diajak[]" value="Suami">
+                                <label for="ajak-istri">Suami</label>
+                            </div>
+                            <div class="custom-check">
+                                <input type="checkbox" id="ajak-anak1" name="yang_diajak[]" value="anak1">
+                                <label for="ajak-anak1">Anak 1</label>
+                            </div>
+                            <div class="custom-check">
+                                <input type="checkbox" id="ajak-anak2" name="yang_diajak[]" value="anak2">
+                                <label for="ajak-anak2">Anak 2</label>
+                            </div>
+                            <div class="custom-check">
+                                <input type="checkbox" id="ajak-anak3" name="yang_diajak[]" value="anak3">
+                                <label for="ajak-anak3">Anak 3</label>
+                            </div>
+                            <div class="custom-check">
+                                <input type="checkbox" id="ajak-anak4" name="yang_diajak[]" value="anak4">
+                                <label for="ajak-anak4">Anak 4</label>
+                            </div>
+                            </div>
+
+                            <!-- Kehamilan (sembunyi awalnya) -->
+                            <div class="form-group" id="wrapper-kehamilan" style="display: none;">
+                            <label>Apakah Istri Anda Sedang Hamil?</label>
+                            <select class="form-control margin-5px-bottom" id="kehamilan">
+                                <option value="">-- Pilih Jawaban --</option>
+                                <option value="YA">YA</option>
+                                <option value="TIDAK">TIDAK</option>
+                            </select>
+                            </div>
+
+                            <!-- Usia Kehamilan (sembunyi awalnya) -->
+                            <div class="form-group" id="wrapper-usiakehamilan" style="display: none;">
+                            <label>Usia Kehamilan</label>
+                            <input class="margin-5px-bottom form-control" type="text" id="usiakehamilan" placeholder="Contoh: 5 bulan">
+                            </div>
+
+                            <div class="button" id="btn" style="display: none;">
+                                <button type="submit" class="btn">Daftar</button>
+                            </div>
+                            
+                            <!-- Akan muncul otomatis jika sudah daftar -->
+                             <div id="infodaftar" style="display: none;">
+                              <h4  class="title" style="text-align: center; color: green;">Anda Sudah Mengisi Form</h4>
+                              <p id="infotidak" style="text-align: center; color: rgb(255, 0, 0); display: none;">Anda mengisi "Tidak Ikut Tour"</p>
+                              <p id="infoikut" style="text-align: center; color: green; display: none;"></p>
+                              <p style="text-align: center;">Jika ada perubahan data, silakan menghubungi pihak panitia</p>
+                             </div>
+                            
+                          </form>
+                        </div>
+                        <h3 class="title" style="color: red;">Mohon Maaf, Pendaftaran Telah di Tutup</h3>
+                        <p>Silakan hubungi panitia Fukusuke Tour 2025 untuk perubahan data</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Registration section -->
+<div id="overlay" style="
+  display: none;
+  position: fixed;
+  z-index: 9997;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.3);
+  pointer-events: all;
+"></div>
+
+<!-- Modal pop-up tengah -->
+<div id="modalForm" style="
+  display: none;
+  position: fixed;
+  z-index: 9998;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 700px;
+  height: 500px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  overflow: hidden;
+  position: fixed;
+">
+
+  <!-- Iframe Google Form -->
+  <iframe id="iframeForm" src="" style="width: 100%; height: 100%; border: none;"></iframe>
+
+  <!-- Lapisan pelindung atas modal agar form tidak bisa di-klik -->
+  <div id="modalBlocker" style="
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: 9999;
+    cursor: not-allowed;
+  "></div>
+</div>
+    <!-- Start Footer Area -->
+
+    <!--/ End Footer Area -->
+
+     <!-- ========================= scroll-top ========================= -->
+     <a href="#" class="scroll-top btn-hover">
+        <i class="lni lni-chevron-up"></i>
+    </a>
+
+    <!-- ========================= JS here ========================= -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/count-up.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/tiny-slider.js"></script>
+    <script src="assets/js/glightbox.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Fungsi untuk memuat file HTML ke dalam elemen
+        function loadHTML(elementId, filePath) {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', filePath, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById(elementId).innerHTML = xhr.responseText;
+
+                    // Jalankan highlight hanya setelah navbar dimuat
+                    if (filePath.includes('navbar.html')) {
+                        highlightActiveLink();
+                    }
+                }
+            };
+            xhr.send();
+        }
+
+        // Fungsi untuk menandai link navbar yang aktif
+        function highlightActiveLink() {
+            const pageCode = document.body.getAttribute('data-page');
+            if (!pageCode) return;
+
+            const navLinks = document.querySelectorAll('#nav a');
+
+            navLinks.forEach(link => {
+                const target = link.getAttribute('data-target');
+                if (target === pageCode) {
+                    link.classList.add('active');
+                    const parentItem = link.closest('.nav-item');
+                    if (parentItem) parentItem.classList.add('active-parent');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+
+        // Load awal
+        loadHTML('navbar-container', 'menu/navbar.html');
+        loadHTML('toolbar-container', 'menu/toolbar.html');
+        loadHTML('footer-container', 'menu/footer.html');
+
+        // Fungsi memuat konten ke dalam #content-container
+        function loadContent(filePath) {
+            loadHTML('content-container', filePath);
+        }
+    </script>
+
+    <script>
+    // ambil elemen
+    const selDest = document.getElementById('destinasi');
+    const wrapAlasan = document.getElementById('wrapper-alasan');
+    const alasanInput = document.getElementById('alasan');
+
+    // fungsi toggle
+    selDest.addEventListener('change', () => {
+    if (selDest.value === 'Tidak Ikut Tour') {
+        wrapAlasan.style.display = 'block';
+        alasanInput.setAttribute('required', 'required');
+    } else {
+        wrapAlasan.style.display = 'none';
+        alasanInput.removeAttribute('required');
+        // optional: kosongkan input alasan
+        document.getElementById('alasan').value = '';
+    }
+    });
+    </script>
+    <script>
+  const checkboxIstri = document.getElementById('ajak-istri');
+  const wrapperKehamilan = document.getElementById('wrapper-kehamilan');
+  const selectKehamilan = document.getElementById('kehamilan');
+  const wrapperUsia = document.getElementById('wrapper-usiakehamilan');
+  const statusSelect = document.getElementById('status');
+  const wrapperYangDiajak = document.getElementById('wrapper-yang-diajak');
+
+  statusSelect.addEventListener('change', () => {
+    if (statusSelect.value === 'Menikah') {
+      wrapperYangDiajak.style.display = 'block';
+    } else {
+      wrapperYangDiajak.style.display = 'none';
+
+      // Uncheck semua jika status bukan menikah
+      document.querySelectorAll('#wrapper-yang-diajak input[type="checkbox"]').forEach(cb => {
+        cb.checked = false;
+      });
+    }
+  });
+
+  checkboxIstri.addEventListener('change', () => {
+    if (checkboxIstri.checked) {
+      wrapperKehamilan.style.display = 'block';
+    } else {
+      wrapperKehamilan.style.display = 'none';
+      wrapperUsia.style.display = 'none';
+      selectKehamilan.value = '';
+      document.getElementById('usiakehamilan').value = '';
+    }
+  });
+
+  selectKehamilan.addEventListener('change', () => {
+    if (selectKehamilan.value === 'YA') {
+      wrapperUsia.style.display = 'block';
+    } else {
+      wrapperUsia.style.display = 'none';
+      document.getElementById('usiakehamilan').value = '';
+    }
+  });
+</script>
+<!-- Overlay yang mencegah interaksi dengan halaman -->
+
+
+<script>
+document.querySelector('form').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  // Ambil semua data
+  const nik = document.getElementById('nik').value.trim();
+  const nama = document.getElementById('nama').value.trim();
+  const perusahaan = document.getElementById('perusahaan').value.trim();
+  const destinasi = document.getElementById('destinasi').value;
+  const alasan = document.getElementById('alasan').value.trim();
+  const status = document.getElementById('status').value;
+  const kehamilan = document.getElementById('kehamilan').value;
+  const usiaKehamilan = document.getElementById('usiakehamilan').value.trim();
+
+  let yangDiajak = [];
+  document.querySelectorAll('input[name="yang_diajak[]"]:checked').forEach(cb => {
+    yangDiajak.push(cb.value);
+  });
+
+  // Buat URL Google Form
+  const baseUrl = `https://docs.google.com/forms/d/e/1FAIpQLSd5LYT1QwG6i0sN_2QHqEUskbxz-SV5XsE41mtlSIW9hWZUhQ/formResponse?entry.802584002=${encodeURIComponent(perusahaan)}`;
+  const params = [
+    `entry.1510700757=${encodeURIComponent(nama)}`,
+    `entry.29654904=${encodeURIComponent(nik)}`,
+    `entry.136212491=${encodeURIComponent(destinasi)}`,
+    `entry.1840960179=${encodeURIComponent(alasan)}`,
+    `entry.1389361014=${encodeURIComponent(status)}`,
+    `entry.1686942148=${encodeURIComponent(yangDiajak.join(', '))}`,
+    `entry.1609240036=${encodeURIComponent(kehamilan)}`,
+    `entry.775268901=${encodeURIComponent(usiaKehamilan)}`,
+    `submit=Submit`
+  ];
+
+
+  const finalUrl = `${baseUrl}&${params.join('&')}`;
+
+  // Tampilkan modal & overlay
+  const modal = document.getElementById('modalForm');
+  const overlay = document.getElementById('overlay');
+  const iframe = document.getElementById('iframeForm');
+
+  iframe.src = finalUrl;
+  modal.style.display = 'block';
+  overlay.style.display = 'block';
+
+  // Setelah 3 detik, tutup modal & reload
+  setTimeout(() => {
+    document.getElementById("modalForm").style.display = "none";
+    document.getElementById("overlay").style.display = "none";
+    location.reload();
+  }, 3000);
+});
+</script>
+<script>
+const CONFIG = {
+  SPREADSHEET_ID: "11nx7hDtzNXE_t8ZpEwU8oJji_oSv78IQafmokXCzZqY" // ganti dengan ID Spreadsheet kamu
+};
+
+document.getElementById("nik").addEventListener("input", async () => {
+  const nikInput = document.getElementById("nik").value.trim();
+  if (!nikInput) return;
+
+  const url = `https://docs.google.com/spreadsheets/d/${CONFIG.SPREADSHEET_ID}/gviz/tq?tqx=out:csv&sheet=data`;
+
+  try {
+    const response = await fetch(url);
+    const csvText = await response.text();
+    const rows = csvText.trim().split("\n").map(row => row.split(","));
+    const errorNik = document.getElementById("error-nik");
+
+    let found = false;
+
+    for (let i = 1; i < rows.length; i++) {
+      const row = rows[i].map(cell => cell.trim().replace(/^"|"$/g, "")); // Bersihkan kutip
+      const nik = row[0];
+      const nama = row[1];
+      const jk = row[2];
+      const pt = row[3];
+      const statusDaftar = row[4];
+      const isi = row[5];
+
+      
+
+      const checkboxIstri = document.getElementById('cek');
+      const checkboxsuami = document.getElementById('ajak-suami');
+
+      if (nik === nikInput) {
+        
+        found = true;
+        document.getElementById("error-nik").style.display = "none";
+        document.getElementById("info").style.display = "none";
+        document.getElementById("nama").value = nama;
+        document.getElementById("perusahaan").value = pt;
+         console.log("Status Daftar:", statusDaftar);
+         console.log("jenis kelamin:", jk);
+
+        if (statusDaftar === "Belum Daftar") {
+        document.getElementById("wrapper-destinasi").style.display = "block";
+        document.getElementById("wrapper-status").style.display = "block";
+        document.getElementById("infodaftar").style.display = "none";
+        document.getElementById("btn").style.display = "block";
+        
+        } else if (statusDaftar === "Sudah Daftar") {
+          // Tampilkan pesan sudah daftar
+          document.getElementById("infodaftar").style.display = "block";
+          document.getElementById("wrapper-destinasi").style.display = "none";
+          document.getElementById("wrapper-status").style.display = "none";
+          document.getElementById("btn").style.display = "none";
+
+          if (isi === "tidak ikut wisata") {
+            document.getElementById("infotidak").style.display = "block";
+          } else if (isi && isi !== "Tidak Ikut Tour") {
+            document.getElementById("infoikut").style.display = "block";
+            document.getElementById("infoikut").textContent = "destinasi anda adalah " + isi;
+          }
+
+          // Sembunyikan input lain
+        }
+
+        if (jk === "Male") {
+        document.getElementById("chekistri").style.display = "block";
+        document.getElementById("cheksuami").style.display = "none";
+        
+        } else if (jk === "Female") {
+          // Tampilkan pesan sudah daftar
+        document.getElementById("chekistri").style.display = "none";
+        document.getElementById("cheksuami").style.display = "block";
+
+          // Sembunyikan input lain
+        }
+        break;
+      }
+    }
+
+    if (!found) {
+      errorNik.textContent = "NIK tidak ditemukan.";
+      document.getElementById("nama").value = "";
+      document.getElementById("perusahaan").value = "";
+      document.getElementById("destinasi").parentElement.style.display = "none";
+      document.getElementById("status").parentElement.style.display = "none";
+      document.getElementById("info").style.display = "block";
+      
+    }
+  } catch (err) {
+    console.error("Gagal mengambil data:", err);
+  }
+});
+</script>
+
+
+</body>
+</html>

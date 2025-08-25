@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Informasi Peserta</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.svg">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- Web Font -->
+    <link href="../../css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/LineIcons.2.0.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/tiny-slider.css">
+    <link rel="stylesheet" href="assets/css/glightbox.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+
+</head>
+
+<body data-page="ikepesertaan">
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- /End Preloader -->
+
+    <!-- Start Header Area -->
+    <header class="header navbar-area">
+        <div id="navbar-container"></div>
+    </header>
+    <!-- End Header Area -->
+
+    <!-- Start Breadcrumbs -->
+    <div class="breadcrumbs overlay">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
+                    <div class="breadcrumbs-content">
+                        <h1 class="page-title">Informasi Peserta Tour 2025</h1>
+                        <p>Periksa nama anda dan keluarga anda, apakah sudah terdaftar sebagai peserta tour ?</p>
+                    </div>
+                    <ul class="breadcrumb-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li>Info Peserta</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+
+    <!-- Start Blog Singel Area -->
+    <section class="section blog-single">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-12">
+                    <div class="single-inner">
+                        <div class="post-thumbnils">
+                        </div>
+                        <div class="post-details">
+                            <div class="detail-inner">
+                                <!-- post meta -->
+                                <ul class="custom-flex post-meta">
+                                    <li>
+                                        <a href="javascript:void(0)">
+                                            <i class="lni lni-calendar"></i>
+                                            10 Agustus 2024
+                                        </a>
+                                    </li>
+                                </ul>
+                                <h2 class="post-title">
+                                    <a href="javascript:void(0)">INFORMASI PESERTA TOUR 2025 <span class="sheet-name"></span><br></a>
+                                </h2>
+                                <p>Periksa kembali list di bawah ini <br>
+                                    Jika anda mendaftar untuk ikut serta tour 2025, pastikan nama anda dan keluarga yang anda daftarkan muncul pada list di bawah ini<br>
+                                </p>
+                                <h3>Keterangan</h3>
+                                <ul class="list">
+                                    <li><i class="lni lni-chevron-right-circle"></i>Nama yang di munculkan adalah 4 huruf awal dari nama karyawan</li>
+                                    <li><i class="lni lni-chevron-right-circle"></i>NIK yang di munculkan di ambil dari 4 digit angka dari NIK karyawan</li>
+                                    <li><i class="lni lni-chevron-right-circle"></i>Bagi pasangan suami-istri yang berstatus karyawan FK/FKI data peserta anak mengikuti data suami</li>
+                                </ul>
+                                <p><br></p>
+                                <h3>Peserta Dufan <span class="sheet-name"></span></h3>
+                                <p>Berikut adalah table untuk peserta <span class="sheet-name"></span><br>
+                                    yang memilih Dufan sebagai destinasi tour.<br>
+                                </p>
+
+                                <div>
+                                    <div class="table-container">
+                                        <table id="tableDufan" border="1">
+                                        <thead>
+                                            <tr>
+                                            <th>No</th>
+                                            <th>Nama</th>
+                                            <th>NIK</th>
+                                            <th>PT</th>
+                                            <th>Pasangan</th>
+                                            <th>Anak 1</th>
+                                            <th>Anak 2</th>
+                                            <th>Anak 3</th>
+                                            <th>Destinasi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <p><br></p>
+                                <h3>Peserta ODS-Seawolrd-JBL <span class="sheet-name"></span></h3>
+                                <p>Berikut adalah table untuk peserta <span class="sheet-name"></span><br>
+                                    yang memilih paket bundling (ODS-Seaworl-JBL) sebagai destinasi tour.<br>
+                                </p>
+
+                                <div>
+                                    <div class="table-container">
+                                        <table id="tableODS" border="1">
+                                        <thead>
+                                            <tr>
+                                            <th>No</th>
+                                            <th>Nama</th>
+                                            <th>NIK</th>
+                                            <th>PT</th>
+                                            <th>Pasangan</th>
+                                            <th>Anak 1</th>
+                                            <th>Anak 2</th>
+                                            <th>Anak 3</th>
+                                            <th>Destinasi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                        </table>
+                                    </div>
+                                </div>  
+                                <p><br></p>
+                                <p>Jika anda merasa sudah mendaftar dan tidak bisa menemukan nama anda pada table, anda bisa memasukan 4 digit nomor nik anda pada kolom text yang tersedia untuk mencari data anda<br>
+                                    jika nama anda belum bisa di temukan , silakan hubungi panitia tour 2025,
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <aside class="col-lg-4 col-md-12 col-12">
+                    <div class="sidebar">
+                        <!-- Single Widget -->
+                        <div class="widget search-widget">
+                            <h5 class="widget-title">Masukan NIK Anda</h5>
+                            <form action="javascript:void(0)">
+                                <input id="input-nik" type="text" placeholder="Masukan NIK anda">
+                            </form>
+                        </div>
+
+                        <div class="widget popular-feeds" style="display: block;">
+                            <h5 class="widget-title">Informasi Kepesertaan</h5>
+                            <div class="popular-feed-loop">
+                                <div class="single-popular">
+                                <div class="feed-desc">
+                                    <span class="time">Peserta</span>
+                                    <h6 class="post-title" id="sidebar-nama">-</h6>
+                                </div>
+                                <p>----------------------------------------------------------</p>
+                                <div class="feed-desc">
+                                    <span class="time">Keluarga</span>
+                                    <h6 class="post-title" id="sidebar-keluarga">-</h6>
+                                </div>
+                                <p>----------------------------------------------------------</p>
+                                <div class="feed-desc">
+                                    <span class="time">Destinasi</span>
+                                    <h6 class="post-title" id="sidebar-destinasi">-</h6>
+                                </div>
+                                <p>----------------------------------------------------------</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <!--/ End Single Widget -->
+                        <!-- Single Widget -->
+                        <div class="widget popular-feeds">
+                            <h5 class="widget-title">Informasi Kepesertaan</h5>
+                            <div class="popular-feed-loop">
+                                <div class="single-popular-feed">
+                                    <div class="feed-img">
+                                        <a href="info-peserta.html?sheet=FK"><img src="assets/images/ADD/peserta.png" alt="#"></a>
+                                    </div>
+                                    <div class="feed-desc">
+                                        <h6 class="post-title"><a href="info-peserta.html?sheet=FK">Peserta FK</a>
+                                        </h6>
+                                        <span class="time"><i class="lni lni-calendar"></i>-</span>
+                                    </div>
+                                </div>
+                                <div class="popular-feed-loop">
+                                <div class="single-popular-feed">
+                                    <div class="feed-img">
+                                        <a href="info-peserta.html?sheet=FKI"><img src="assets/images/ADD/peserta.png" alt="#"></a>
+                                    </div>
+                                    <div class="feed-desc">
+                                        <h6 class="post-title"><a href="info-peserta.html?sheet=FKI">Peserta FKI</a>
+                                        </h6>
+                                        <span class="time"><i class="lni lni-calendar"></i>-</span>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            </div>
+                            
+                        </div>
+                        <!--/ End Single Widget -->
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+    <!-- End Blog Singel Area -->
+
+    <!-- Start Footer Area -->
+    <div id="footer-container"></div>
+    <!--/ End Footer Area -->
+
+    <!-- ========================= scroll-top ========================= -->
+    <a href="#" class="scroll-top btn-hover">
+        <i class="lni lni-chevron-up"></i>
+    </a>
+
+    <!-- ========================= JS here ========================= -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/count-up.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/tiny-slider.js"></script>
+    <script src="assets/js/glightbox.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+        // Fungsi untuk memuat file HTML ke dalam elemen
+        function loadHTML(elementId, filePath) {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', filePath, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById(elementId).innerHTML = xhr.responseText;
+
+                    // Jalankan highlight hanya setelah navbar dimuat
+                    if (filePath.includes('navbar.html')) {
+                        highlightActiveLink();
+                    }
+                }
+            };
+            xhr.send();
+        }
+
+        // Fungsi untuk menandai link navbar yang aktif
+        function highlightActiveLink() {
+            const pageCode = document.body.getAttribute('data-page');
+            if (!pageCode) return;
+
+            const navLinks = document.querySelectorAll('#nav a');
+
+            navLinks.forEach(link => {
+                const target = link.getAttribute('data-target');
+                if (target === pageCode) {
+                    link.classList.add('active');
+                    const parentItem = link.closest('.nav-item');
+                    if (parentItem) parentItem.classList.add('active-parent');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+
+        // Load awal
+        loadHTML('navbar-container', 'menu/navbar.html');
+        loadHTML('footer-container', 'menu/footer.html');
+
+        // Fungsi memuat konten ke dalam #content-container
+        function loadContent(filePath) {
+            loadHTML('content-container', filePath);
+        }
+    </script>
+
+<script>
+const CONFIG = {
+  SPREADSHEET_ID: "1bKvdfmKe1SViPxiZSf2P3Od90YYloIctSJt3WVt1enU"
+};
+
+const params = new URLSearchParams(window.location.search);
+const SHEET_NAME = params.get("sheet") || "FK";
+document.querySelectorAll(".sheet-name").forEach(el => {
+  el.textContent = SHEET_NAME;
+});
+
+
+
+let allRows = []; // simpan semua data di sini
+
+async function loadData() {
+  const url = `https://docs.google.com/spreadsheets/d/${CONFIG.SPREADSHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(SHEET_NAME)}`;
+  const response = await fetch(url);
+  const csvText = await response.text();
+
+  allRows = csvText
+    .trim()
+    .split("\n")
+    .map(r => r.split(",").map(cell => cell.replace(/^"|"$/g, "").trim()));
+
+  // filter & isi tabel
+  const tbodyDufan = document.querySelector("#tableDufan tbody");
+  const tbodyODS = document.querySelector("#tableODS tbody");
+
+  tbodyDufan.innerHTML = "";
+  tbodyODS.innerHTML = "";
+
+  let noDufan = 1;
+  let noODS = 1;
+
+  allRows.forEach((row, i) => {
+    if (i === 0) return; // skip header
+    const filterValue = (row[15] || "").trim();
+
+    if (filterValue === "Dufan") {
+      tbodyDufan.innerHTML += `
+        <tr>
+          <td>${noDufan++}</td>
+          <td>${row[1] || ""}</td>
+          <td>${(row[2] || "").slice(-4)}</td>
+          <td>${row[3] || ""}</td>
+          <td>${row[4] || ""}</td>
+          <td>${row[5] || ""}</td>
+          <td>${row[7] || ""}</td>
+          <td>${row[9] || ""}</td>
+          <td>${row[15] || ""}</td>
+        </tr>
+      `;
+    }
+
+    if (filterValue === "ODS-Seaworld-JBL") {
+      tbodyODS.innerHTML += `
+        <tr>
+          <td>${noODS++}</td>
+          <td>${row[1] || ""}</td>
+          <td>${(row[2] || "").slice(-4)}</td>
+          <td>${row[3] || ""}</td>
+          <td>${row[4] || ""}</td>
+          <td>${row[5] || ""}</td>
+          <td>${row[7] || ""}</td>
+          <td>${row[9] || ""}</td>
+          <td>${row[15] || ""}</td>
+        </tr>
+      `;
+    }
+  });
+}
+
+function searchByNIK(nik) {
+  if (!nik) return;
+
+const found = allRows.find((row, i) =>
+  i > 0 && (row[2] || "").trim() === nik // harus cocok persis
+);
+
+
+  if (found) {
+    document.querySelector("#sidebar-nama").textContent = found[1] || "-";
+    document.querySelector("#sidebar-keluarga").innerHTML =
+      [found[4], found[5], found[7], found[11]]
+        .filter(Boolean)
+        .join("<br>") || "-";
+    document.querySelector("#sidebar-destinasi").textContent = found[15] || "-";
+  } else {
+    document.querySelector("#sidebar-nama").textContent = "Data tidak ditemukan";
+    document.querySelector("#sidebar-keluarga").textContent = "-";
+    document.querySelector("#sidebar-destinasi").textContent = "-";
+  }
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+  await loadData();
+
+  document.querySelector("#input-nik").addEventListener("input", () => {
+    const val = document.querySelector("#input-nik").value.trim();
+    if (val.length >= 1) { // tidak dibatasi 4 digit
+      searchByNIK(val);
+    }
+  });
+});
+
+</script>
+
+
+
+</body>
+
+</html>

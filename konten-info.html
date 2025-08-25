@@ -1,0 +1,324 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Rincian Informasi</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.svg">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- Web Font -->
+    <link href="../../css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/LineIcons.2.0.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/tiny-slider.css">
+    <link rel="stylesheet" href="assets/css/glightbox.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+
+</head>
+
+<body data-page="iinformasi">
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- /End Preloader -->
+
+    <!-- Start Header Area -->
+    <header class="header style2 navbar-area">
+        <div id="navbar-container"></div>
+    </header>
+    <!-- End Header Area -->
+
+    <!-- Start Breadcrumbs -->
+    <div class="breadcrumbs overlay">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
+                    <div class="breadcrumbs-content">
+                        <h1 class="page-title">Rincian Informasi Tour 2025</h1>
+                        <p>Dapatkan informasi dari Tour Fukusuke 2025 melalui halaman ini</p>
+                    </div>
+                    <ul class="breadcrumb-nav">
+                        <li><a href="index.html">Beranda</a></li>
+                        <li>Informasi</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+
+    <!-- Start Blog Singel Area -->
+    <section class="section blog-single">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-12">
+                     <div class="single-inner" id="blogContent">
+                    </div>
+                </div>
+                <aside class="col-lg-4 col-md-12 col-12">
+                    <div class="sidebar">
+                        <!-- Single Widget -->
+                        <!--/ End Single Widget -->
+                        <!-- Single Widget -->
+                        <div class="widget popular-feeds">
+                            <h5 class="widget-title">Informasi Baru</h5>
+                            <div class="popular-feed-loop">
+                                <div id="lastNewsFeeds"></div>
+
+                            </div>
+                        </div>
+                        <h1><br></h1>
+                        <!--/ End Single Widget -->
+                        <!-- Single Widget -->
+                        <div class="widget popular-feeds">
+                            <h5 class="widget-title">Informasi Lain</h5>
+                            <div class="popular-feed-loop">
+                                <div id="popularFeeds"></div>
+                            </div>
+                        </div>
+                        <!--/ End Single Widget -->
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+    <!-- End Blog Singel Area -->
+
+    <!-- Start Footer Area -->
+    <div id="footer-container"></div>
+    <!--/ End Footer Area -->
+
+    <!-- ========================= scroll-top ========================= -->
+    <a href="#" class="scroll-top btn-hover">
+        <i class="lni lni-chevron-up"></i>
+    </a>
+
+    <!-- ========================= JS here ========================= -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/count-up.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/tiny-slider.js"></script>
+    <script src="assets/js/glightbox.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+        <script>
+        // Fungsi untuk memuat file HTML ke dalam elemen
+        function loadHTML(elementId, filePath) {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', filePath, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById(elementId).innerHTML = xhr.responseText;
+
+                    // Jalankan highlight hanya setelah navbar dimuat
+                    if (filePath.includes('navbar.html')) {
+                        highlightActiveLink();
+                    }
+                }
+            };
+            xhr.send();
+        }
+
+        // Fungsi untuk menandai link navbar yang aktif
+        function highlightActiveLink() {
+            const pageCode = document.body.getAttribute('data-page');
+            if (!pageCode) return;
+
+            const navLinks = document.querySelectorAll('#nav a');
+
+            navLinks.forEach(link => {
+                const target = link.getAttribute('data-target');
+                if (target === pageCode) {
+                    link.classList.add('active');
+                    const parentItem = link.closest('.nav-item');
+                    if (parentItem) parentItem.classList.add('active-parent');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+
+        // Load awal
+        loadHTML('navbar-container', 'menu/navbar.html');
+        loadHTML('toolbar-container', 'menu/toolbar.html');
+        loadHTML('footer-container', 'menu/footer.html');
+
+        // Fungsi memuat konten ke dalam #content-container
+        function loadContent(filePath) {
+            loadHTML('content-container', filePath);
+        }
+    </script>
+    <script>
+  const SUPABASE_URL = 'https://oildpbwnyayfdshnjujp.supabase.co';
+  const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9pbGRwYndueWF5ZmRzaG5qdWpwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQwNTAzOTgsImV4cCI6MjA2OTYyNjM5OH0.dPPvWAoRhn2AZzYIDgWRubg5YE0xDnNSFTL4zmbPX1w';
+
+    // ✅ gunakan nama lain, misalnya supabaseClient
+    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get('slug');
+    function formatTanggal(tanggal) {
+      return new Date(tanggal).toLocaleDateString('id-ID', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      });
+    }
+
+    async function loadBlog() {
+      const { data, error } = await supabaseClient
+        .from('tour2025')
+        .select('*')
+        .eq('link', slug)
+        .eq('status', 'publish')
+        .single();
+
+      if (error || !data) {
+        document.getElementById('blogContent').innerHTML = '<p>Halaman tidak ditemukan.</p>';
+        return;
+      } 
+
+  const html = `
+    <div class="post-thumbnils">
+      <img src="https://oildpbwnyayfdshnjujp.supabase.co/storage/v1/object/public/headerimg/${data.header_img}" alt="#">
+    </div>
+    <div class="post-details">
+      <div class="detail-inner">
+        <ul class="custom-flex post-meta">
+          <li>
+            <a href="javascript:void(0)">
+              <i class="lni lni-calendar"></i> ${formatTanggal(data.tanggal)}
+            </a>
+          </li>
+        </ul>
+        <h2 class="post-title">
+          <a href="javascript:void(0)">${data.judul}</a>
+        </h2>
+        <div>${data.konten}</div>
+        <h1><br></h1>
+        <div class="post-tags-media">
+          <div class="post-social-media" style="text-align: left;">
+            <h5 class="share-title">Informasi lain</h5>
+            <ul class="custom-flex">
+              <li>Follow Instagram Fukusuke Story
+                <a href="javascript:void(0)" class="instagram">
+                  <i class="lni lni-instagram"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  document.getElementById('blogContent').innerHTML = html;
+}
+
+loadBlog();
+
+  // === POPULAR (3 Random, No Duplicate) ===
+async function loadPopularFeeds() {
+    const { data, error } = await supabaseClient
+      .from('tour2025')
+      .select('judul, header_img, link, tanggal')
+      .eq('status', 'publish');
+
+    if (error || !data || data.length === 0) {
+      document.getElementById('popularFeeds').innerHTML = '<p>Blog tidak ditemukan.</p>';
+      return;
+    }
+    const uniqueData = Array.from(new Map(data.map(item => [item.link, item])).values());
+    // Ambil 3 item acak
+    const randomItems = data
+      .sort(() => Math.random() - 0.5)
+      .slice(0, 3);
+
+    const html = randomItems.map(item => `
+      <div class="single-popular-feed">
+        <div class="feed-img">
+          <a href="?slug=${item.link}">
+            <img src="https://oildpbwnyayfdshnjujp.supabase.co/storage/v1/object/public/headerimg/${item.header_img}" alt="#">
+          </a>
+        </div>
+        <div class="feed-desc">
+          <h6 class="post-title">
+            <a href="?slug=${item.link}">${item.judul}</a>
+          </h6>
+          <span class="time"><i class="lni lni-calendar"></i>${formatTanggal(item.tanggal)}</span>
+        </div>
+      </div>
+    `).join('');
+
+    document.getElementById('popularFeeds').innerHTML = html;
+  }
+
+  loadPopularFeeds();
+
+    // === News ===
+  async function loadLastNewsFeeds() {
+  const { data, error } = await supabaseClient
+    .from('tour2025')
+    .select('judul, header_img, link, tanggal')
+    .eq('status', 'publish')
+    .order('tanggal', { ascending: false });
+
+  if (error || !data || data.length === 0) {
+    document.getElementById('lastNewsFeeds').innerHTML = '<p>Belum ada berita terbaru.</p>';
+    return;
+  }
+
+  // Hapus duplikat berdasarkan slug (link)
+  const uniqueData = Array.from(new Map(data.map(item => [item.link, item])).values());
+
+  const latestItems = uniqueData.slice(0, 3); // Ambil 3 teratas
+
+  const html = latestItems.map(item => `
+    <div class="single-popular-feed">
+      <div class="feed-img">
+        <a href="?slug=${item.link}">
+          <img src="https://oildpbwnyayfdshnjujp.supabase.co/storage/v1/object/public/headerimg/${item.header_img}" alt="#">
+        </a>
+      </div>
+      <div class="feed-desc">
+        <h6 class="post-title">
+          <a href="?slug=${item.link}">${item.judul}</a>
+        </h6>
+        <span class="time"><i class="lni lni-calendar"></i>${formatTanggal(item.tanggal)}</span>
+      </div>
+    </div>
+  `).join('');
+
+  document.getElementById('lastNewsFeeds').innerHTML = html;
+}
+
+loadLastNewsFeeds();
+
+
+    </script>
+
+
+</body>
+
+</html>

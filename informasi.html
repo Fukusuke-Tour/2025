@@ -1,0 +1,250 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Informasi</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.svg">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- Web Font -->
+    <link href="../../css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/LineIcons.2.0.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/tiny-slider.css">
+    <link rel="stylesheet" href="assets/css/glightbox.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+
+</head>
+
+<body data-page="iinformasi">
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- /End Preloader -->
+
+    <!-- Start Header Area -->
+    <header class="header style2 navbar-area">
+        <div id="navbar-container"></div>
+    </header>
+    <!-- End Header Area -->
+
+    <!-- Start Breadcrumbs -->
+    <div class="breadcrumbs overlay">
+      
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
+                    <div class="breadcrumbs-content">
+                        <h1 class="page-title">Pusat Informasi</h1>
+                        <p>
+                        </p>
+                        <p>
+                        </p>
+                    </div>
+                    <ul class="breadcrumb-nav">
+                        <li><a href="index.html">Beranda</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+
+    <!-- Start Blog Singel Area -->
+    <section class="section latest-news-area blog-grid-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div id="informasiFeeds" class="row"></div>
+                    <div class="pagination center">
+                        <div id="informasiPagination"></div>
+                    </div>
+                    <!--/ End Pagination -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Blog Singel Area -->
+
+    <!-- Start Footer Area -->
+    <!-- Start Footer Area -->
+    <div id="footer-container"></div>
+    <!--/ End Footer Area -->
+    <!--/ End Footer Area -->
+
+    <!-- ========================= scroll-top ========================= -->
+    <a href="#" class="scroll-top btn-hover">
+        <i class="lni lni-chevron-up"></i>
+    </a>
+
+    <!-- ========================= JS here ========================= -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/count-up.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/tiny-slider.js"></script>
+    <script src="assets/js/glightbox.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script>
+        // Fungsi untuk memuat file HTML ke dalam elemen
+        function loadHTML(elementId, filePath) {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', filePath, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById(elementId).innerHTML = xhr.responseText;
+
+                    // Jalankan highlight hanya setelah navbar dimuat
+                    if (filePath.includes('navbar.html')) {
+                        highlightActiveLink();
+                    }
+                }
+            };
+            xhr.send();
+        }
+
+        // Fungsi untuk menandai link navbar yang aktif
+        function highlightActiveLink() {
+            const pageCode = document.body.getAttribute('data-page');
+            if (!pageCode) return;
+
+            const navLinks = document.querySelectorAll('#nav a');
+
+            navLinks.forEach(link => {
+                const target = link.getAttribute('data-target');
+                if (target === pageCode) {
+                    link.classList.add('active');
+                    const parentItem = link.closest('.nav-item');
+                    if (parentItem) parentItem.classList.add('active-parent');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+
+        // Load awal
+        loadHTML('navbar-container', 'menu/navbar.html');
+        loadHTML('toolbar-container', 'menu/toolbar.html');
+        loadHTML('footer-container', 'menu/footer.html');
+
+        // Fungsi memuat konten ke dalam #content-container
+        function loadContent(filePath) {
+            loadHTML('content-container', filePath);
+        }
+    </script>
+<script>
+  const SUPABASE_URL = 'https://oildpbwnyayfdshnjujp.supabase.co';
+  const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9pbGRwYndueWF5ZmRzaG5qdWpwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQwNTAzOTgsImV4cCI6MjA2OTYyNjM5OH0.dPPvWAoRhn2AZzYIDgWRubg5YE0xDnNSFTL4zmbPX1w';
+
+const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+const pageSize = 6;
+let currentPage = 1;
+
+function formatTanggal(tanggal) {
+  return new Date(tanggal).toLocaleDateString('id-ID', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+  });
+}
+
+async function loadInformasi(page = 1) {
+  const from = (page - 1) * pageSize;
+  const to = from + pageSize - 1;
+
+  const { data, count, error } = await supabaseClient
+    .from('tour2025')
+    .select('judul, header_img, link, tanggal, deskripsi', { count: 'exact' })
+    .eq('status', 'publish')
+    .order('tanggal', { ascending: false })
+    .range(from, to);
+
+  if (error || !data) {
+    document.getElementById('informasiFeeds').innerHTML = '<p>Data tidak tersedia.</p>';
+    document.getElementById('informasiPagination').innerHTML = '';
+    return;
+  }
+
+  const html = data.map(item => `
+    <div class="col-lg-4 col-md-6 col-12">
+      <div class="single-news custom-shadow-hover wow fadeInUp" data-wow-delay=".2s">
+        <div class="image">
+          <a href="konten-info.html?slug=${item.link}">
+            <img class="thumb" src="https://oildpbwnyayfdshnjujp.supabase.co/storage/v1/object/public/headerimg/${item.header_img}" alt="#">
+          </a>
+        </div>
+        <div class="content-body">
+          <div class="meta-data">
+            <ul>
+              <li>
+                <i class="lni lni-calendar"></i>
+                <a href="javascript:void(0)">${formatTanggal(item.tanggal)}</a>
+              </li>
+            </ul>
+          </div>
+          <h4 class="title"><a href="konten-info.html?slug=${item.link}">${item.judul}</a></h4>
+          <p>${item.deskripsi}</p>
+          <div class="button">
+            <a href="konten-info.html?slug=${item.link}" class="btn">Read More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+
+  document.getElementById('informasiFeeds').innerHTML = html;
+
+  // Hitung total halaman
+  const totalPages = Math.ceil(count / pageSize);
+
+  // Buat pagination
+  let paginationHTML = '<ul class="pagination-list">';
+  if (page > 1) {
+    paginationHTML += `<li><a href="javascript:void(0)" onclick="loadInformasi(${page - 1})">Prev</a></li>`;
+  }
+
+  for (let i = 1; i <= totalPages; i++) {
+    paginationHTML += `<li${i === page ? ' class="active"' : ''}>
+      <a href="javascript:void(0)" onclick="loadInformasi(${i})">${i}</a>
+    </li>`;
+  }
+
+  if (page < totalPages) {
+    paginationHTML += `<li><a href="javascript:void(0)" onclick="loadInformasi(${page + 1})">Next</a></li>`;
+  }
+  paginationHTML += '</ul>';
+
+  document.getElementById('informasiPagination').innerHTML = paginationHTML;
+}
+
+// Panggil halaman pertama saat pertama kali load
+loadInformasi();
+</script>
+
+
+</body>
+
+</html>
