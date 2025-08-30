@@ -412,7 +412,7 @@ function cariManual(nik) {
 
   const kodeKeluarga = foundRow[6];
   const busId = foundRow[0];
-
+    const dest = foundRow[15];
   // ambil nama bus dari consoleData
   const busRow = consoleData.find(row => row[0] === busId);
   const namaBus = busRow ? busRow[1] : busId;
@@ -443,6 +443,10 @@ function cariManual(nik) {
     ${items}
     <h3 style="text-align: center; margin-top:20px;">Nomor Bus Anda</h3>
     <h1 style="text-align: center;">${namaBus}</h1>
+    <h3><br></h3>
+    <h3 style="text-align: center; margin-top:20px;">Tujuan Destinasi</h3>
+    <h1 style="text-align: center;">${dest}</h1>
+    <h3><br></h3>
   `;
 }
 </script>
