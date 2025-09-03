@@ -315,12 +315,13 @@ async function loadDataUniversal(selectId, filterValue, renderFn) {
     const selectedValue = this.value;
     const selectedOption = this.options[this.selectedIndex];
     const linkGrup = selectedOption.dataset.link || "#";
-    renderFn(selectedValue, linkGrup);
+    const busName = selectedOption.textContent; 
+    renderFn(selectedValue, linkGrup, busName);
   });
 }
 
 // Fungsi universal untuk render bus
-function renderBusUniversal(busId, linkGrup, containerId, statusCol) {
+function renderBusUniversal(busId, linkGrup, busName, containerId, statusCol) {
   const container = document.getElementById(containerId);
   container.innerHTML = "";
 
@@ -337,7 +338,10 @@ function renderBusUniversal(busId, linkGrup, containerId, statusCol) {
   busData.forEach(row => {
     if (row[0] === busId) {
       const nama = row[3];
-      const status = (row[statusCol] || "").toLowerCase();
+      let status = (row[statusCol] || "").toLowerCase();
+      if (status === "anak1" || status === "anak2" || status === "anak3") {
+        status = "anak";
+      }
       items += `
         <li class="course-item">
           <a class="section-item-link lesson" href="JavaScript:void(0);">
@@ -357,7 +361,7 @@ function renderBusUniversal(busId, linkGrup, containerId, statusCol) {
       <li class="single-curriculum-section">
         <div class="section-header">
           <div class="section-left">
-            <h5 class="title">Bus ${busId}</h5>
+            <h5 class="title">${busName}</h5>
           </div>
         </div>
         <ul class="section-content">${items}</ul>
@@ -365,7 +369,7 @@ function renderBusUniversal(busId, linkGrup, containerId, statusCol) {
           <div class="row align-items-center">
             <div class="col-lg-6 col-md-6 col-12">
               <div class="button">
-                <a href="${linkGrup}" class="btn"><i class="lni lni-whatsapp"></i> Join Grup Bus</a>
+                <a href="${linkGrup}" class="btn"><i class="lni lni-whatsapp"></i> Join Grup ${busName}</a>
               </div>
             </div>
           </div>
@@ -379,11 +383,11 @@ function renderBusUniversal(busId, linkGrup, containerId, statusCol) {
 document.addEventListener("DOMContentLoaded", async () => {
   // untuk Dufan → status ada di kolom ke-6 (index 5)
   await loadDataUniversal("select-dufan", "Dufan", 
-    (busId, linkGrup) => renderBusUniversal(busId, linkGrup, "data-dufan", 5));
+    (busId, linkGrup, busName) => renderBusUniversal(busId, linkGrup, busName, "data-dufan", 4));
 
   // untuk ODS → status ada di kolom ke-5 (index 4)
   await loadDataUniversal("select-ODS", "ODS-Seaworld-JBL", 
-    (busId, linkGrup) => renderBusUniversal(busId, linkGrup, "data-ODS", 4));
+    (busId, linkGrup, busName) => renderBusUniversal(busId, linkGrup, busName, "data-ODS", 4));
 });
 </script>
 
