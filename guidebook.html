@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guidebook Redirect</title>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Ambil parameter dari URL
+      const params = new URLSearchParams(window.location.search);
+      const destinasi = params.get("destinasi");
+
+      // Cek destinasi dan redirect
+      if (destinasi === "dufan") {
+        window.location.href = "https://www.canva.com/design/DAGypwiY5iA/GPdJI_qroly-bbz_P9DMpg/view?utm_content=DAGypwiY5iA&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hfe4fde8322";
+      } 
+      else if (destinasi === "odsseaworldjbl") {
+        window.location.href = "https://www.canva.com/design/DAGyjv3kOC0/_EDtLXYmyHvWTXzjz6f_nA/view?utm_content=DAGyjv3kOC0&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=he2771fe7d7";
+      } 
+      else {
+        document.body.innerHTML = "<h2>Destinasi tidak ditemukan.</h2>";
+      }
+    });
+  </script>
+</head>
+<body>
+  <p>Sedang mengarahkan ke guidebook...</p>
+</body>
+</html>
