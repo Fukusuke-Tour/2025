@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
 <head>
@@ -110,10 +110,10 @@
                     <div class="col-lg-4 col-md-4 col-12 padding-zero">
                         <!-- Start Single Feature -->
                         <div class="single-feature">
-                            <h3><a href="javascript:void(0)">Pendaftaran Peserta</a></h3>
-                            <p>Pendaftar peserta Tour 2025 sudah di tutup</p>
+                            <h3><a href="javascript:void(0)">Pusat Informasi</a></h3>
+                            <p>kunjungi laman berikut untuk mendapat lebih banyak informasi</p>
                             <div class="button">
-                                <a href="javascript:void(0)" class="btn">CLOSE<i class="lni lni-cross"></i></a>
+                                <a href="informasi.html" class="btn">Informasi<i class="lni lni-arrow-right"></i></a>
                             </div>
                         </div>
                         <!-- End Single Feature -->
@@ -199,27 +199,9 @@
                 <div class="row">
                 <div class="col-12">
                     <main id="gallery">
-                        <div class="videos">
-                            <a href="https://www.youtube.com/watch?v=xhwBGimglQI" 
-                            class="glightbox video-btn" 
-                            data-type="video" 
-                            data-source="youtube" 
-                            data-width="900" 
-                            data-autoplay="true">
-                                <img src="https://img.youtube.com/vi/xhwBGimglQI/hqdefault.jpg" width="160">
-                            </a>
-
-                            <a href="https://www.youtube.com/watch?v=T92PFDZpubI" 
-                            class="glightbox video-btn" 
-                            data-type="video" 
-                            data-source="youtube" 
-                            data-width="900" 
-                            data-autoplay="true">
-                                <img src="https://img.youtube.com/vi/T92PFDZpubI/hqdefault.jpg" width="160">
-                            </a>
-
-                        </div>
-
+                    <div class="videos" id="video-container">
+                        <p>Memuat video...</p>
+                    </div>
                     </main>
                 </div>
             </div>
@@ -542,9 +524,62 @@ async function loadPopularFeeds() {
 
   loadPopularFeeds();
     </script>
+<script>
+const CONFIG = {
+  SPREADSHEET_ID: "1SGGiZGLunTVo_FhmYXpsHPmVx7Zc33NuwWZwWhOwz_Q"
+};
+const SHEET_YT = "yt";
 
+// Fungsi load CSV (menggunakan yang kamu minta)
+async function loadCSV(sheetName) {
+  const url = `https://docs.google.com/spreadsheets/d/${CONFIG.SPREADSHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(sheetName)}`;
+  const response = await fetch(url);
+  const csvText = await response.text();
+  return csvText
+    .trim()
+    .split("\n")
+    .map(r => r.split(",").map(cell => cell.replace(/^"|"$/g, "").trim()));
+}
+
+// Fungsi render video
+async function loadVideos() {
+  try {
+    const data = await loadCSV(SHEET_YT);
+    // data[0] biasanya header, kita skip mulai index 1
+    const rows = data.slice(1);
+    const container = document.getElementById("video-container");
+    container.innerHTML = ""; // hapus "Memuat video..."
+
+    rows.forEach(row => {
+      const idyt = row[2]; // kolom ke-3
+      if (idyt) {
+        const a = document.createElement("a");
+        a.href = `https://www.youtube.com/watch?v=${idyt}`;
+        a.className = "glightbox video-btn";
+        a.dataset.type = "video";
+        a.dataset.source = "youtube";
+        a.dataset.width = "900";
+        a.dataset.autoplay = "true";
+
+        const img = document.createElement("img");
+        img.src = `https://img.youtube.com/vi/${idyt}/hqdefault.jpg`;
+        img.width = 160;
+
+        a.appendChild(img);
+        container.appendChild(a);
+      }
+    });
+
+    // aktifkan glightbox setelah render
+    GLightbox({ selector: ".glightbox" });
+  } catch (error) {
+    console.error("Gagal memuat data:", error);
+    document.getElementById("video-container").innerHTML = "<p>Gagal memuat video.</p>";
+  }
+}
+
+loadVideos();
+</script>
 </body>
 
-
 </html>
-
